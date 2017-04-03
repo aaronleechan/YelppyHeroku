@@ -1,0 +1,47 @@
+<div class=" center jumbotron">
+
+  <div class="container">
+
+    <div>
+      <ul class="inline pull-left">
+        <button type="button" class="btn btn-default navbar-btn" id="writeReviewbutton">
+          <%= link_to "Create Resturant", new_resturant_path%></button>
+      </ul>
+      <ul class="inline pull-right">
+
+      <% if !current_user %>
+        <%= link_to "Sign up", new_user_registration_path %>
+        &nbsp;&nbsp;
+        <%= link_to "Sign in", new_user_session_path %>
+      <% else %>
+        <%= link_to "Edit Profile", edit_user_registration_path %>
+        &nbsp &nbsp &nbsp
+        <%= link_to "Sign out", destroy_user_session_path,method: :delete %>
+      <%end%>
+      </ul>
+    </div>
+
+
+    <h1> Find a restaurant </h1>
+
+
+      <div id="locationfinder" class="col-lg-8 col-lg-offset-2">
+        <center>
+        <div class="search-form">
+          <%= form_tag search_resturants_path, method: :get do |f| %>
+              <%= text_field_tag :search,nil, placeholder: "pizza, bugers, etc" %>
+              &nbsp&nbsp&nbsp
+              <%= text_field_tag :location,nil, placeholder: "San Jose, San Francisco, etc" %>
+              <br \><br \>
+              <%= select_tag :category, options_for_select(Category.all.map{ |c| [c.name, c.id]}) %>
+              <br \><br \>
+              <%= submit_tag 'Search', class: "btn span2 btn-realto-form btn-large" %>
+          <% end %>
+        </div><!-- /input-group -->
+        </center>
+      </div><!-- /.col-lg-6 -->
+
+
+
+  </div>
+</div>
