@@ -8,7 +8,7 @@
  * @version : 2.7.1
  *
  */
- <%= javascript_include_tag 'ratyrate.js', "data-turbolinks-track" => false %>
+ /*<%= javascript_include_tag 'ratyrate.js', "data-turbolinks-track" => false %>*/
 
 ;
 (function($) {
