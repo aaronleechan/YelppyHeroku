@@ -12,18 +12,43 @@
             <div class="col-md-4">
               <a class="overlay" href="#" title="Property title">
                 <span class="more"></span>
+
                 <% if resturant.image.url.present? %>
-                    <%= link_to image_tag(resturant.image_url.to_s, :size=>"370x210"), resturant %>
-                <% else %>
-                    <%= link_to image_tag("http://placehold.it/370x210"), resturant %>
-                <% end %>
+                          <%= link_to image_tag(resturant.image_url.to_s, :size=>"370x210"), resturant %>
+
+                      <% elsif resturant.name == 'Taco Bell' %>
+                        <image src="https://d2eawub7utcl6.cloudfront.net/s0/uploads/locations/1019782b67be71318459abdfc67e80198a882.jpg" height="210" width="370"></image>
+
+                      <% elsif resturant.name == 'Mcdonald' %>
+                        <image src="https://michaelmarkadrianus.files.wordpress.com/2014/05/mcdonalds1.jpg" height="210" width="370"></image>
+
+                      <% elsif resturant.name == 'Chipotle' %>
+                        <image src="https://drpma142ptgxf.cloudfront.net/assets/logo.svg" height="210" width="370"></image>
+                      <% elsif resturant.name == 'Panda Express' %>
+                        <image src="https://lh3.ggpht.com/o_9NahZqWnwDKnjKvGgkUnABsqKB5ACiqYGrcKUAd5YvF0yMkeL8vCnNFSpr1Es_UiCc=w300" height="210" width="370"></image>
+
+                      <% elsif resturant.name == 'A Sushi' %>
+                        <image src="https://thumbs.dreamstime.com/x/neon-sushi-sign-19842775.jpg" height="210" width="370"></image>
+
+                      <% elsif resturant.name == 'Pho' %>
+                        <image src="https://previews.123rf.com/images/nanamiou/nanamiou1604/nanamiou160400005/55259878-Pho-noodle-house-neon-sign-with-noodle-and-chopsticks-Stock-Vector.jpg" height="210" width="370"></image>
+
+                      <% else %>
+                          <%= link_to image_tag("http://placehold.it/370x210"), resturant %>
+                      <% end %>
               </a>
+
               <span class="prop-tag"></span>
               <div class="prop-info">
+              <h2><span class="rating-value pull-right margin0 star-rating" data-score=<%= @avg_rating %>></span></h2>
                 <h3 class="prop-title"><%= link_to resturant.name, resturant %></h3>
                 <ul class="more-info clearfix">
                   <li class="info-label clearfix"><span class="pull-left">Address:</span>
                     <span class="qty pull-right"><%= resturant.address1 %></span></li>
+                    <li class="info-label clearfix"><span class="pull-left">City:</span>
+                    <span class="qty pull-right"><%= resturant.city %></span></li>
+                    <li class="info-label clearfix"><span class="pull-left">Zipcode:</span>
+                    <span class="qty pull-right"><%= resturant.zipcode %></span></li>
                 </ul>
               </div><!-- prop-info ending point -->
             </div><!-- holder ending point -->

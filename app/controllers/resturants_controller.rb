@@ -4,9 +4,21 @@ class ResturantsController < ApplicationController
 
 	def index
 		visitor_latitude = request.location.latitude
+		#visitor_latitude = 37.3382082
 		visitor_longitude = request.location.longitude
-		@resturant = Resturant.near([visitor_latitude,visitor_longitude],20)
+		#visitor_longitude =	-121.8863286
+
+
+		
+		#@resturants = @resturant.nearbys([visitor_latitude,visitor_longitude],20)
+		
+		@resturants = Resturant.near([visitor_latitude,visitor_longitude],20)
+
 		#@resturants = Resturant.all
+	end
+
+	def showall
+		@resturants = Resturant.all
 	end
 
 	def new

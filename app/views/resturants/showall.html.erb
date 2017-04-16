@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Search Page</title>
+  <title>Show All</title>
 </head>
 <body>
 
@@ -15,6 +15,7 @@
                     <a class="overlay" href="#" title="Property title">
                       <span class="more"></span>
 
+
                       <% if resturant.image.url.present? %>
                           <%= link_to image_tag(resturant.image_url.to_s, :size=>"370x210"), resturant %>
 
@@ -26,6 +27,7 @@
 
                       <% elsif resturant.name == 'Chipotle' %>
                         <image src="https://drpma142ptgxf.cloudfront.net/assets/logo.svg" height="210" width="370"></image>
+
                       <% elsif resturant.name == 'Panda Express' %>
                         <image src="https://lh3.ggpht.com/o_9NahZqWnwDKnjKvGgkUnABsqKB5ACiqYGrcKUAd5YvF0yMkeL8vCnNFSpr1Es_UiCc=w300" height="210" width="370"></image>
 
@@ -46,6 +48,7 @@
                         <% else %>
                     <span class="prop-tag">No review yet!</span>
                     <% end %>
+                    
                     <div class="prop-info">
                       <h3 class="prop-title"><%= link_to resturant.name, resturant %></h3>
                       <ul class="more-info clearfix">
