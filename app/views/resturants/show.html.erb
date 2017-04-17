@@ -13,9 +13,35 @@
 
         <% if @resturant.image_url present? %>
         <%= image_tag(@resturant.image_url, :size=>"500x300") %>
+
+        <% elsif @resturant.name == 'Taco Bell' %>
+        <image src="https://d2eawub7utcl6.cloudfront.net/s0/uploads/locations/1019782b67be71318459abdfc67e80198a882.jpg" height="210" width="370"></image>
+
+        <% elsif @resturant.name == 'Mcdonald' %>
+        <image src="https://michaelmarkadrianus.files.wordpress.com/2014/05/mcdonalds1.jpg" height="300" width="500"></image>
+
+        <% elsif @resturant.name == 'Chipotle' %>
+        <image src="https://drpma142ptgxf.cloudfront.net/assets/logo.svg" height="210" width="370"></image>
+
+        <% elsif @resturant.name == 'Mcdonald' %>
+        <image src="https://michaelmarkadrianus.files.wordpress.com/2014/05/mcdonalds1.jpg" height="300" width="500"></image>
+
+        <% elsif @resturant.name == 'Panda Express' %>
+        <image src="https://lh3.ggpht.com/o_9NahZqWnwDKnjKvGgkUnABsqKB5ACiqYGrcKUAd5YvF0yMkeL8vCnNFSpr1Es_UiCc=w300" height="210" width="370"></image>
+
+        <% elsif @resturant.name == 'A Sushi' %>
+        <image src="https://thumbs.dreamstime.com/x/neon-sushi-sign-19842775.jpg" height="210" width="370"></image>
+
+        <% elsif @resturant.name == 'Pho' %>
+        <image src="https://previews.123rf.com/images/nanamiou/nanamiou1604/nanamiou160400005/55259878-Pho-noodle-house-neon-sign-with-noodle-and-chopsticks-Stock-Vector.jpg" height="210" width="370"></image>
+
         <% end %>
 
-        <h2 class="prop-title pull-left margin0"><%=@resturant.name %>
+
+
+
+
+        <p><h2 class="prop-title pull-left margin0"><%=@resturant.name %></p>
 
         <% if current_user.try(:admin?) %>
         <small><%= link_to "Edit", edit_resturant_path, class: "btn btn-primary btn-mini"%></small>
@@ -56,12 +82,7 @@
           </div>
           <br \>
           <br \>
-          <div class="statepart">
-            <span class="pull-left">State:</span>
-            <span class="pull-right"><%=@resturant.state%></span>
-          </div>
-          <br \>
-          <br \>
+         
           <div class="zipcodepart">
             <span class="pull-left">Zipcode:</span>
             <span class="pull-right"><%=@resturant.zipcode%></span>
@@ -105,8 +126,10 @@
       To use this code on your website, get a free API key from Google.
       Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
       -->
+      <a target="_blank" href="https://maps.google.com">google map</a>
     </div>
     <!-- Ending of Google API-->
+    
   </div>
 </div>
 
