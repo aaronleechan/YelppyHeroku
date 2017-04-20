@@ -126,8 +126,8 @@
       To use this code on your website, get a free API key from Google.
       Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
       -->
-      alert("Hello" + myLatLng);
-      <a target="_blank" href="https://maps.google.com/"+myLatLng>google map</a>
+<a href="http://maps.google.com/maps?q={CustomerCity}">
+      <a target="_blank" href="https://maps.google.com/maps?q=<%=@resturant.address1%>,<%=@resturant.city%>,<%=@resturant.zipcode%>">google map</a>
     </div>
     <!-- Ending of Google API-->
     
