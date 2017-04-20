@@ -1,4 +1,4 @@
-cclass ReviewsController < ApplicationController
+class ReviewsController < ApplicationController
   before_action :set_resturant
   before_action :authenticate_user!
 
