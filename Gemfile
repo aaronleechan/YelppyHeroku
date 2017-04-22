@@ -24,7 +24,9 @@ gem 'coffee-rails', '~> 4.2'
 #google api
 gem 'google-api-client', '~> 0.9'
 gem 'geocoder'
-gem 'omniauth-google'
+#gem 'omniauth-google'
+#gem "omniauth-google-oauth2", "~> 0.2.1"
+gem 'omniauth-facebook'
 
 
 
