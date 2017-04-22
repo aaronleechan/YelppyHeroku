@@ -25,6 +25,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'google-api-client', '~> 0.9'
 gem 'geocoder'
 
+
 #add Image Gem
 gem 'carrierwave'
 # Use jquery as the JavaScript library
