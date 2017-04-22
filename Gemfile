@@ -28,7 +28,9 @@ gem 'geocoder'
 #gem "omniauth-google-oauth2", "~> 0.2.1"
 gem 'omniauth-facebook'
 
-
+#gem for connectiong amazon
+gem "figaro"
+gem "fog"
 
 #add Image Gem
 gem 'carrierwave'
