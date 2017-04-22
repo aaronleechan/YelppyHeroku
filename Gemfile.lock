@@ -95,6 +95,7 @@ GEM
       multi_json (~> 1.11)
       os (~> 0.9)
       signet (~> 0.7)
+    hashie (3.5.5)
     httpclient (2.8.3)
     hurley (0.2)
     i18n (0.8.0)
@@ -129,6 +130,17 @@ GEM
     nio4r (1.2.1)
     nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
+    oauth (0.5.1)
+    omniauth (1.6.1)
+      hashie (>= 3.4.6, < 3.6.0)
+      rack (>= 1.6.2, < 3)
+    omniauth-google (1.0.2)
+      multi_json
+      omniauth (~> 1.0)
+      omniauth-oauth
+    omniauth-oauth (1.1.0)
+      oauth
+      omniauth (~> 1.0)
     orm_adapter (0.5.0)
     os (0.9.6)
     pg (0.20.0)
@@ -237,6 +249,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
+  omniauth-google
   pg
   puma (~> 3.0)
   rails (~> 5.0.1)

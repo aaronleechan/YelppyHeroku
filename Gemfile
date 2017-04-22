@@ -24,6 +24,8 @@ gem 'coffee-rails', '~> 4.2'
 #google api
 gem 'google-api-client', '~> 0.9'
 gem 'geocoder'
+gem 'omniauth-google'
+
 
 
 #add Image Gem
