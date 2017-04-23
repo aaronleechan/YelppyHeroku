@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   root "resturants#index"
   resources :resturants do
     resources :reviews, except: [:index, :show]
+
     collection do
       get 'search'
     end
   end
 
 
+  match '/profile', to: 'users#show_profile',   via: :get
   match '/about_us', to: 'pages#about_us',      via: :get
   match '/contact_us', to: 'pages#contact_us',  via: :get
   match '/showall', to: 'resturants#showall', via: :get
