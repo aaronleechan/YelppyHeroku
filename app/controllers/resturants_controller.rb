@@ -28,13 +28,16 @@ class ResturantsController < ApplicationController
 	def create
 		#check whether the restuarant is already in the database or not
   		#only checking whether a restaurant with the phone exists or not
+
+
 			@resturant = Resturant.new(resturant_params)
 			if @resturant.save
 					redirect_to @resturant
 			else
 				flash[:danger] = @resturant.errors.full_messages.to_sentence
 				render 'new'
-			end	
+			end
+
 	end
 
 	def edit

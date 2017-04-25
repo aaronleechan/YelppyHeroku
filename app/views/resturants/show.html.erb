@@ -164,7 +164,10 @@
                 <td>
                   <div class="clearfix star-rating" data-score=<%= review.rating %>></div>
                   <%= review.comment %>
-                  <%= review.photo %>
+
+                  <% if review.photo_url present? %>
+                  <%= image_tag(review.photo_url, :size=>"500x300") %>
+                  <%end%>
                   
 
                 </td>
