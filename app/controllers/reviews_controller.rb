@@ -9,8 +9,16 @@ class ReviewsController < ApplicationController
   def create
     @review = current_user.reviews.build(review_params)
     @review.resturant = @resturant
-    @review.save
-    redirect_to @resturant
+    if @review.save
+          redirect_to @resturant
+      else
+        flash[:danger] = @review.errors.full_messages.to_sentence
+        render 'new'
+      end
+  end
+
+  def showReview
+    @reviews = Review.all
   end
 
 
@@ -21,6 +29,6 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:comment, :rating, :photo)
   end
 end

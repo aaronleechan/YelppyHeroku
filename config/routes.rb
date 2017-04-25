@@ -13,11 +13,14 @@ Rails.application.routes.draw do
     end
   end
 
+ 
+
 
   match '/profile', to: 'users#show_profile',   via: :get
   match '/about_us', to: 'pages#about_us',      via: :get
   match '/contact_us', to: 'pages#contact_us',  via: :get
   match '/showall', to: 'resturants#showall', via: :get
+  match '/showReview', to: 'reviews#showReview', via: :get
 
 
 end

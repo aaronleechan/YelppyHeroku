@@ -1,6 +1,4 @@
-<% if @review.blank? %>
-            <h3>Could not find a review</h3>
-        <%else%>
+
            <tbody>
             <% @reviews.each do |review| %>
               <tr>
@@ -12,9 +10,12 @@
                   <%= review.comment %>
 
 
+                  <% if @review.photo_url present? %>
+                  <%= image_tag(@review.photo_url, :size=>"500x300") %>
+                  <% end %>
 
                 </td>
               </tr>
             <%end%>
           </tbody>
-         <% end %>
+  
