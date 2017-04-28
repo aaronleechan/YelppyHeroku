@@ -1,6 +1,9 @@
 class Resturant < ActiveRecord::Base
   has_many :reviews
   belongs_to :category
+  belongs_to :user
+
+
   validates_presence_of :name
   validates_presence_of :description
   validates_presence_of :address1

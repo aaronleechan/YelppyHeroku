@@ -29,8 +29,11 @@ class ResturantsController < ApplicationController
 		#check whether the restuarant is already in the database or not
   		#only checking whether a restaurant with the phone exists or not
 
+		@resturant = current_user.resturants.build(resturant_params)
+			#@resturant = Resturant.new(resturant_params)
 
-			@resturant = Resturant.new(resturant_params)
+
+
 			if @resturant.save
 					redirect_to @resturant
 			else

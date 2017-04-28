@@ -50,8 +50,11 @@
         <% else %>
         <% end %>
 
-        <small><%= link_to "Menu", new_resturant_menu_path(@resturant), class: "btn btn-primary btn-mini"%></small>
-         <button type="button" class="btn btn-info btn-mini" data-toggle="modal" data-target="#myModal">Open Menu</button>
+        <% if @resturant.user_id == current_user.id %>
+          <small><%= link_to "Menu", new_resturant_menu_path(@resturant), class: "btn btn-primary btn-mini"%></small>
+        <% end %>
+
+            <button type="button" class="btn btn-info btn-mini" data-toggle="modal" data-target="#myModal">Open Menu</button>
         
 
 

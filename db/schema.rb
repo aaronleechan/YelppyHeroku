@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427182405) do
+ActiveRecord::Schema.define(version: 20170428172310) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -44,7 +44,9 @@ ActiveRecord::Schema.define(version: 20170427182405) do
     t.float   "latitude"
     t.float   "longitude"
     t.string  "image"
+    t.integer "user_id"
     t.index ["category_id"], name: "index_resturants_on_category_id"
+    t.index ["user_id"], name: "index_resturants_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|

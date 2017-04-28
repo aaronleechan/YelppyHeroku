@@ -9,6 +9,7 @@ class User < ApplicationRecord
 
   has_many :reviews
   has_many :menus
+  has_many :resturants
 
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
