@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170424184555) do
+ActiveRecord::Schema.define(version: 20170427182405) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "menus", force: :cascade do |t|
+    t.string  "name"
+    t.text    "ingredient"
+    t.string  "price"
+    t.integer "value"
+    t.integer "footrating"
+    t.integer "cookingTime"
+    t.integer "resturant_id"
+    t.integer "user_id"
+    t.string  "figure"
+    t.index ["resturant_id"], name: "index_menus_on_resturant_id"
+    t.index ["user_id"], name: "index_menus_on_user_id"
   end
 
   create_table "resturants", force: :cascade do |t|

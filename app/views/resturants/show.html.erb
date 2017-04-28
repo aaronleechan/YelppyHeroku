@@ -50,6 +50,11 @@
         <% else %>
         <% end %>
 
+        <small><%= link_to "Menu", new_resturant_menu_path(@resturant), class: "btn btn-primary btn-mini"%></small>
+         <button type="button" class="btn btn-info btn-mini" data-toggle="modal" data-target="#myModal">Open Menu</button>
+        
+
+
         </h2>
         <h2><span class="rating-value pull-right margin0 star-rating" data-score=<%= @avg_rating %>></span></h2>
       </div>
@@ -140,6 +145,8 @@
     <div>
       <br />
       <button><%= link_to "Review", new_resturant_review_path(@resturant)%></button>
+     
+
       <br />
       <h2>Review</h2>
       </div>
@@ -179,6 +186,30 @@
     <br />
   </div>
 </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          
+          <%= render 'menus/menuShowPage'%>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
 
 </body>
 </html>

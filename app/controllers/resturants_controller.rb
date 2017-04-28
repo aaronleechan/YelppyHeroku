@@ -64,6 +64,9 @@ class ResturantsController < ApplicationController
 		else
 			@avg_rating = @reviews.average(:rating).round(2)
 		end
+
+		@menus = Menu.where(resturant_id: @resturant)
+
 	end
 
 	def search

@@ -3,17 +3,14 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 
-
   root "resturants#index"
   resources :resturants do
     resources :reviews, except: [:index, :show]
-
+    resources :menus
     collection do
       get 'search'
     end
   end
-
- 
 
 
   match '/profile', to: 'users#show_profile',   via: :get
