@@ -8,6 +8,19 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <style>
+  body{
+
+    background-image: url("/assets/bookBackground.jpg");
+  }
+
+  .footer {
+  width: 100%;
+  height: 50%;
+  margin-top: 150px;
+  }
+  </style>
+
   <body>
     <%= render 'navigationsBar/navigation'%>
     <!-- Starting of flash each do-->
@@ -34,6 +47,12 @@
         }
     });
   </script>
-   <%= render 'navigationsBar/footer'%>
+
+
+
+    <footer class="footer">
+     <%= render 'navigationsBar/footer'%>
+    </footer>
+
   </body>
 </html>
