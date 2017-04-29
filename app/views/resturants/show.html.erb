@@ -37,15 +37,11 @@
 
         <% end %>
 
-
-
-
-
         <p><h2 class="prop-title pull-left margin0"><%=@resturant.name %></p>
 
         <% if current_user.try(:admin?) %>
         <small><%= link_to "Edit", edit_resturant_path, class: "btn btn-primary btn-mini"%></small>
-        <small><%= link_to "Delete",resturant_path, method: :delete, data:
+        <small><%= link_to "Delete",menu_path, method: :delete, data:
                 {confirm: "Are you sure you want to delete?"}, class: "btn btn-danger btn-mini"%></small>
         <% else %>
         <% end %>
@@ -53,12 +49,13 @@
         <% if @resturant.user_id == current_user.id %>
           <small><%= link_to "Menu", new_resturant_menu_path(@resturant), class: "btn btn-primary btn-mini"%></small>
         <% end %>
+        
 
             <button type="button" class="btn btn-info btn-mini" data-toggle="modal" data-target="#myModal">Open Menu</button>
         
 
 
-        </h2>
+       
         <h2><span class="rating-value pull-right margin0 star-rating" data-score=<%= @avg_rating %>></span></h2>
       </div>
 
@@ -177,8 +174,7 @@
 
                   <% if review.photo_url present? %>
                   <%= image_tag(review.photo_url, :size=>"500x300") %>
-                  <%end%>
-                  
+                  <%end%>                
 
                 </td>
               </tr>
@@ -199,7 +195,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
+          <h4 class="modal-title">Menu</h4>
         </div>
         <div class="modal-body">
           

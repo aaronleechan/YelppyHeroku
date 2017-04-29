@@ -1,29 +1,59 @@
-		
-		<tbody>
-            <% @menus.each do |menu| %>
-              <tr>
-                <td>
-                  <h5><%= menu.name %></h5>
-                </td>
-                <td>
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
 
-                  <% if menu.figure_url present? %>
-                  <%= image_tag(menu.figure_url, :size=>"500x300") %>
-                  <%end%>
 
-                  <%= menu.name %>
-                  <br/>
+</style>
+  <title></title>
+</head>
+<body>
 
-                  <%= menu.ingredient %>
-                  <%= menu.price %>
-       
-                  <%= menu.footrating %>
-                  
-                </td>
-              </tr>
-            <%end%>
+  <tbody>
+          <div class="row">
+          <% if @menus.blank? %>
+            <h3>No Menu is supported</h3>
+          <%else%>
+              <% @menus.each do |menu| %>
+                <tr>
+                  <td>
+                  </td>
+                  <td>
+
+                    <center>
+
+                      <% if menu.figure_url present? %>
+                      <%= image_tag(menu.figure_url, :size=>"304x236", :class=>"img-circle") %>
+                      <%end%> 
+                      <br/>
+
+                      <h2 class="prop-title"><%= menu.name %> </h2>
+                      <br/>
+
+                       <span class="rating-value star-rating" data-score=<%= menu.footrating %>></span></h2>
+
+                      <p><strong>Ingredient </strong></p>
+                      <p><%= menu.ingredient %></p>
+                      <p><strong>Price: </strong>
+                      <%= menu.price %> $</p>
+                      <br/>
+                    </center>
+                    <br/>
+                    
+                  </td>
+                </tr>
+              <%end%>
+              <%end%>
+            </div>
+
           </tbody>
 
+</body>
+</html>
+
+
+<!-- Hello -->		
+		
 
 
 

@@ -10,11 +10,18 @@
   padding-bottom: 5px;
 }
 
+body{
+
+  position:relative;
+  width: 100%;
+  height: 100%
+}
+
 // findwrestaurant css ( restaurants / findnewrestaurant.html.erb)
 .jumbotron{
   width:90%;
   height:300px;
-  margin-left:65px;
+ 
 }
 
 // All center class css
@@ -55,4 +62,9 @@
 li{
   list-style: none;
 }
+
+.MenuNameValue {
+    font-size: 120px;
+}
+
 

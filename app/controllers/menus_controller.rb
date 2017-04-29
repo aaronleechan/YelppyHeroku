@@ -20,7 +20,10 @@ class MenusController < ApplicationController
         	flash[:danger] = @menu.errors.full_messages.to_sentence
         	render 'new'
       	end
-  	end
+  end
+
+
+
 
 
   	def menu_params
