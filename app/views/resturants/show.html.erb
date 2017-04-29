@@ -49,12 +49,13 @@
         <% if @resturant.user_id == current_user.id %>
           <small><%= link_to "Menu", new_resturant_menu_path(@resturant), class: "btn btn-primary btn-mini"%></small>
         <% end %>
+        
 
             <button type="button" class="btn btn-info btn-mini" data-toggle="modal" data-target="#myModal">Open Menu</button>
         
 
 
-        </h2>
+       
         <h2><span class="rating-value pull-right margin0 star-rating" data-score=<%= @avg_rating %>></span></h2>
       </div>
 
@@ -173,8 +174,7 @@
 
                   <% if review.photo_url present? %>
                   <%= image_tag(review.photo_url, :size=>"500x300") %>
-                  <%end%>
-                  
+                  <%end%>                
 
                 </td>
               </tr>
