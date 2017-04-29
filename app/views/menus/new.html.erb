@@ -1,13 +1,95 @@
-<h1> This is cooking page </h1>
-<%= form_for [@resturant, @menu] do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :ingredient %>
-  <%= f.label :price %>
-  <%= f.number_field :value %>
-  <%= f.number_field :footrating, value: 1, min: 1, max: 5%>
-  <%= f.number_field :cookingTime %>
-  <%= f.file_field :figure %>
-  <%= f.submit %>
-<%end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menu</title>
+</head>
+<body>
 
+<div class ='container' id='formContainer'>
+  <div class ='row'>
+    <div class ='col-sm-6'>
+
+      <%= form_for [@resturant, @menu] do |f| %>
+
+
+      <!--  Name -->
+      <div class ="form-group">
+
+        <div class="control-label col-sm-2">
+          <%= f.label :name %>
+        </div>
+
+        <div class= ="col-sm-4">
+          <%= f.text_field :name, class: "form-control", placeholder: "Menu Name", autofocus: true%>
+        </div>
+      </div>
+
+      <!-- ingredient -->
+      <div class ="form-group">
+        <div class="control-label col-sm-2">
+          <%= f.label :Ingredient %>
+        </div>
+
+        <div class= ="col-sm-4">
+          <%= f.text_area :ingredient, class: "form-control", placeholder: "Ingredient", autofocus: true%>
+        </div>
+      </div>
+
+        <!-- Price  -->
+        <div class ="form-group">
+
+        <div class="control-label col-sm-2">
+          <%= f.label :Price %>
+        </div>
+
+        <div class= ="col-sm-4">
+          <%= f.text_field :price, class: "form-control", placeholder: "Price", autofocus: true%>
+        </div>
+      </div>
+
+      <div class ="form-group">
+
+        <div class="control-label col-sm-2">
+          <%= f.label :Rating %>
+        </div>
+
+        <div class= ="col-sm-4">
+          <%= f.number_field :footrating, value: 1, min: 1, max: 5, class: "form-control", placeholder: "Rating", autofocus: true%>
+        </div>
+      </div>
+
+      <div class ="form-group">
+
+        <div class="control-label col-sm-2">
+          <%= f.label :Photo %>
+        </div>
+
+        <div class= ="col-sm-4">
+          <%= f.file_field :figure, class: "form-control",  autofocus: true%>
+        </div>
+      </div>
+
+    
+    <br \>
+
+      <!-- Submit -->
+      <div class ="form-group">
+        <div class ="col-sm-6">
+            <%=f.submit%>
+          </div>
+        </div>
+
+      <% end %>
+
+    </div> <!-- Ending class col-xs-8 -->
+
+  </div> <!-- Ending of ROW -->
+</div> <!-- Ending of Container -->
+
+</body>
+</html>
+
+
+
+        
 
