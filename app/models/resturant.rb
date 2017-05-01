@@ -45,6 +45,20 @@ class Resturant < ActiveRecord::Base
     @avg_rating
   end
 
+  def get_price_string
+    @price_string = ""
+
+    (1..price_range.to_i).each do |i|
+      @price_string += "$"
+    end
+
+    if @price_string == ""
+      @price_string = "N/A"
+    end
+    # return price string:
+    @price_string
+  end
+
 
 end
 

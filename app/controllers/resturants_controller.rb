@@ -79,7 +79,7 @@ class ResturantsController < ApplicationController
 	private
 	def resturant_params
 		params.require(:resturant).permit(:name,  :description, :category_id, :address1, :address2, :city,
-																			:image, :state, :zipcode, :phone, :email);
+																			:image, :state, :zipcode, :phone, :email, :price_range);
 	end
 
 	def is_admin?
