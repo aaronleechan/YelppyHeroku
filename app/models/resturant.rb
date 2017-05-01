@@ -35,6 +35,15 @@ class Resturant < ActiveRecord::Base
 
 
 
+  def avg_rating
+    @avg_rating = 0
+
+    if !reviews.blank?
+      @avg_rating = reviews.average(:rating).round(2)
+    end
+
+    @avg_rating
+  end
 
 
 end
