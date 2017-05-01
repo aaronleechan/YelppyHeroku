@@ -52,6 +52,9 @@ class Resturant < ActiveRecord::Base
       @price_string += "$"
     end
 
+    if @price_string == ""
+      @price_string = "N/A"
+    end
     # return price string:
     @price_string
   end

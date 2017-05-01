@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170501175958) do
     t.float   "longitude"
     t.string  "image"
     t.integer "user_id"
-    t.integer "price_range"
+    t.integer "price_range" # added
     t.index ["category_id"], name: "index_resturants_on_category_id"
     t.index ["user_id"], name: "index_resturants_on_user_id"
   end
