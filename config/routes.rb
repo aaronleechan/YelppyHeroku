@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   match '/showall', to: 'resturants#showall', via: :get
   match '/showReview', to: 'reviews#showReview', via: :get
 
+  match '/add_favorites', to: 'users#add_to_favorites', via: :get
+  match '/create_favorite', to: 'favorites#create', via: :get
+
 
 end
