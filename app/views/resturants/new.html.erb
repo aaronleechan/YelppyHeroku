@@ -62,11 +62,11 @@
 			<!-- City -->
 			<div class ="form-group">
 
-				<div class="control-label col-sm-2">
+				<div class="control-label col-sm-1">
 					<%= f.label :city %>
 				</div>
 
-				<div class= ="col-sm-4">
+				<div class= ="col-sm-5">
 					<%= f.text_field :city, class: "form-control", placeholder: "City", autofocus: true%>
 				</div>
 			</div>
@@ -74,11 +74,11 @@
 			<!-- State -->
 			<div class ="form-group">
 
-				<div class="control-label col-sm-2">
+				<div class="control-label col-sm-1">
 					<%= f.label :state %>
 				</div>
 
-				<div class= ="col-sm-4">
+				<div class= ="col-sm-5">
 					<%= f.text_field :state, class: "form-control", placeholder: "State", autofocus: true%>
 				</div>
 			</div>
@@ -86,11 +86,11 @@
 			<!-- ZipCode -->
 			<div class ="form-group">
 
-				<div class="control-label col-sm-2">
+				<div class="control-label col-sm-1">
 					<%= f.label :zipcode %>
 				</div>
 
-				<div class= ="col-sm-4">
+				<div class= ="col-sm-5">
 					<%= f.text_field :zipcode, class: "form-control", placeholder: "Zip Code", autofocus: true%>
 				</div>
 			</div>
@@ -98,11 +98,11 @@
 			<!-- Phone -->
 			<div class ="form-group">
 
-				<div class="control-label col-sm-2">
+				<div class="control-label col-sm-1">
 					<%= f.label :phone %>
 				</div>
 
-				<div class= ="col-sm-4">
+				<div class= ="col-sm-5">
 					<%= f.text_field :phone, class: "form-control", placeholder: "Phone", autofocus: true%>
 				</div>
 			</div>
@@ -110,13 +110,13 @@
 			<!-- Email -->
 			<div class ="form-group">
 
-				<div class="control-label col-sm-2">
+				<div class="control-label col-sm-1">
 					<%= f.label :email %>
 				</div>
 
 				<br \>
 
-				<div class= ="col-sm-4">
+				<div class= ="col-sm-5">
 					<%= f.text_field :email, class: "form-control", placeholder: "email", autofocus: true%>
 				</div>
 			</div>
@@ -124,47 +124,48 @@
       <!-- Price Range -->
       <div class ="form-group">
 
-        <div class="control-label col-sm-2">
+        <div class="control-label col-sm-3">
           <%= f.label :price_range %>
         </div>
 
-        <br \>
-
-        <div class= ="col-sm-4">
+        <div class= ="col-sm-3">
           <%= f.number_field :price_range, value: 1, min: 1, max: 4, class: "form-control", autofocus: true %>
         </div>
       </div>
 
       <!-- Category  -->
       <div class ="form-group">
-       <div class="control-label col-sm-2">
-        <%= f.label :category %>
-       </div>
 
-				<!-- Image Uploader -->
-			<div class ="form-group">
-				<div class="control-label col-sm-2">
-					<%= f.label :image %>
-					</div>
-					<div class= ="col-sm-4">
-						<%= f.file_field :image%>
-					</div>
-			</div>
+	       <div class="control-label col-sm-0">
+	        <%= f.label :category %>
+	       </div>
+	       <br/><br/>
+	       <div>
+	        <%= f.select :category_id,Category.all.map{ |f| [f.name, f.id]}, class: "form-control", autofocus:true %>
+	       </div>
 
-       <div class= ="col-sm-4">
-        <%= f.select :category_id,Category.all.map{ |f| [f.name, f.id]}, class: "form-control", autofocus:true %>
-       </div>
       </div>
-    <br \>
+
+      	<!-- Image Uploader -->
+		<div class ="form-group">
+			<div class="control-label col-sm-0">
+				<%= f.label :image %>
+			</div>
+			<br/><br/>
+			<div class = "col-sm-0">
+				<%= f.file_field :image%>
+			</div>
+		</div>
+    <br \><br \><br \>
 
 			<!-- Submit -->
-			<div class ="form-group">
-				<div class ="col-sm-6">
-    				<%=f.submit%>
-    			</div>
-    		</div>
+		<div class ="form-group">
+			<div class ="col-sm-6">
+   				<%=f.submit%>
+   			</div>
+   		</div>
 
-			<% end %>
+	<% end %>
 
 		</div> <!-- Ending class col-xs-8 -->
 

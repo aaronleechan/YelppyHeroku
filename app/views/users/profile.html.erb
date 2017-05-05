@@ -45,6 +45,19 @@
 
                 <% end %>
                 <h3 class="prop-title"><%= link_to resturant.name, resturant %></h3>
+
+                <div>
+                  <%t = @my_reviews.where(:resturant_id => resturant.id).first.comment%>
+                  <%if (t.empty?) %>
+                  <%  t = "-----No comment to show-----"%>
+                  <%end%>
+                  <%if (t.length > 28)%>
+                  <%  t = t[0, 27] + "..."%>
+                  <%end%>
+                  <%= t%>   
+                </div>
+
+                
               </td> 
           </tr> 
               <%end%>
