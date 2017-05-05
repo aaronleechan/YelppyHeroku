@@ -3,6 +3,13 @@
 <head>
   <title>Restaurant</title>
 </head>
+<style>
+  div.reviewSession
+  {
+    width: 1100px;
+    word-break: keep-all;
+  }
+</style>
 <body>
 
 <div class = "container">
@@ -154,7 +161,6 @@
     <div>
       <br />
       <button><%= link_to "Review", new_resturant_review_path(@resturant)%></button>
-     
 
       <br />
       <h2>Review</h2>
@@ -166,9 +172,9 @@
 
           <thead>
             <tr>
-              <th class="col-mid-3"></th>
-              <th class="col-mid-9"></th>
-              <th class="col-mid-12"></th>
+              <th class="col-xs-3"></th>
+              <th class="col-xs-6"></th>
+              <th class="col-xs-6"></th>
             </tr>
           </thead>
 
@@ -190,9 +196,8 @@
               </tr>
             <%end%>
           </tbody>
-          </tbody>
         </table>
-      <% end %>
+      <%end%>
     <br />
   </div>
 </div>

@@ -6,7 +6,7 @@
 <div class ="container page-content">
   <div class="row">
     <% if @resturants.blank? %>
-        <h3>Could not find a restaurant</h3>
+        <h3>No nearby Restaurants</h3>
     <%else%>
         <% @resturants.each do |resturant| %>
             <div class="col-md-4">
