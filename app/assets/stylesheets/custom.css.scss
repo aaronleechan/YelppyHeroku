@@ -8,6 +8,7 @@
   height:30px;
   margin: 0;
   padding-bottom: 5px;
+  background: white;
 }
 
 body{
@@ -19,7 +20,7 @@ body{
 
 // findwrestaurant css ( restaurants / findnewrestaurant.html.erb)
 .jumbotron{
-  width:90%;
+  width:50%;
   height:300px;
   background:transparent;
 }
@@ -48,11 +49,11 @@ body{
 }
 
 //Carousel slide (views/resturants/show.html.erb
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  width: 70%;
-  margin: auto;
-}
+//.carousel-inner > .item > img,
+//.carousel-inner > .item > a > img {
+//  width: 70%;
+//  margin: auto;
+//}
 
 .container #myCarousel .carousel-inner img{
   width: 500px;
