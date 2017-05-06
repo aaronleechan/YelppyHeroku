@@ -1,6 +1,6 @@
 <div class="row">
 <center>
-    <p><h1> <%= current_user.first_name.titleize%> Profile </h1></p>
+    <p><h1> <%= current_user.first_name.titleize%>'s Profile </h1></p>
 </center>
   <div class="col-sm-6">
 
@@ -8,14 +8,14 @@
       <table class="table">
         <thead>
           <tr>
-            <th><h1 class="prop-title">Review</h1></th>
+            <th><h1 class="prop-title">My Reviews</h1></th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
             <% if @my_review_resturant.blank? %>
-              <h3>Could not find a restaurant</h3>
+              <h3>You haven't reviewed any restaurants yet!</h3>
             <%else%>
               <% @my_review_resturant.each do |resturant| %>
               <td>
@@ -46,6 +46,16 @@
                 <% end %>
                 <h3 class="prop-title"><%= link_to resturant.name, resturant %></h3>
 
+
+                <!--Star Rating:-->
+                <div>
+                  <%review = @my_reviews.where(:resturant_id => resturant.id).first%>
+                  <%if !(review.blank?) %>
+                      <div class="clearfix star-rating" data-score=<%= review.rating %>></div>
+                  <% end %>
+                </div>
+
+                <!--Comment:-->
                 <div>
                   <%t = @my_reviews.where(:resturant_id => resturant.id).first.comment%>
                   <%if (t.empty?) %>
@@ -56,6 +66,8 @@
                   <%end%>
                   <%= t%>   
                 </div>
+
+
 
                 
               </td> 
@@ -75,14 +87,14 @@
       <table class="table">
         <thead>
           <tr>
-            <th><h1 class="prop-title">Favorites</h1></th>
+            <th><h1 class="prop-title">My Favorites</h1></th>
           </tr>
         </thead>
 
         <tbody>
           <tr>
             <% if @my_favorites.blank? %>
-              <h3>Could not find a restaurant</h3>
+              <h3>You haven't added any restaurants to your favorites yet!</h3>
             <%else%>
               <% @my_favorites.each do |resturant| %>
               <td>
