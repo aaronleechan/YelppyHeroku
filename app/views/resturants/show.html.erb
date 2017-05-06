@@ -47,7 +47,7 @@
         <% end %>
 
         <% if !current_user.nil? && @resturant.user_id == current_user.id %>
-          <small><%= link_to "Menu", new_resturant_menu_path(@resturant), class: "btn btn-primary btn-mini"%></small>
+          <small><%= link_to "Add Menu Item", new_resturant_menu_path(@resturant), class: "btn btn-primary btn-mini"%></small>
         <% end %>
         
 
