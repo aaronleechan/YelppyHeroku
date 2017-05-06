@@ -59,12 +59,19 @@
         
 
             <button type="button" class="btn btn-info btn-mini" data-toggle="modal" data-target="#myModal">Open Menu</button>
-        
 
-
-       
         <h2><span class="rating-value pull-right margin0 star-rating" data-score=<%= @avg_rating %>></span></h2>
+
       </div>
+
+        <%if user_signed_in?%>
+            <li class="info-label clearfix">
+            <span class="qty pull-right">
+              <button type="button">
+              <%= link_to "Add To Favorites", add_favorites_path(:fav_resturant_id => @resturant.id.to_i)%>
+              </button>
+            </span></li>
+        <%end%>
 
         <div class="clearfix padding030 row-fluid">
 

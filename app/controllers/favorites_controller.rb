@@ -22,7 +22,7 @@ class FavoritesController < ApplicationController
 				flash[:danger] = "Couldn't add to favorites"
 			end
 		else
-			redirect_to Resturant.find(temp.first.fav_resturant_id), notice: "This resturant is already in you favorites' list"
+			redirect_to Resturant.find(temp.first.fav_resturant_id), notice: "This restaurant is already in you favorites' list"
 		end
 
 	end
