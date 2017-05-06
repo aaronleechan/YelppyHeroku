@@ -1,6 +1,13 @@
-<%= form_for [@resturant, @review] do |f| %>
-  <%= f.text_area :comment %>
-  <%= f.number_field :rating, value: 1, min: 1, max: 5 %>
-  <%= f.file_field :photo %>
+<html>
+  <%= form_for [@resturant, @review] do |f| %>
+  <font size = "8"><%= "Please leave your review" %></font></br>
+  <%= f.text_area :comment, cols:"70", rows:"8"%></br>
+  <font size = "5"><%= "Please leave your rating(scale of 1-5)  "%></font>
+  <%= f.number_field :rating, value: 1, min: 1, max: 5, size:"10" %> </br>
+
+  </br><font size = "5"><%= "Have pictures to share with us? Upload it!"%></font></br>
+  <%= f.file_field :photo %></br>
   <%= f.submit %>
 <%end %>
+
+</html>

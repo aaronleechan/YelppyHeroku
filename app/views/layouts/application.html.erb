@@ -6,9 +6,11 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <style>
+ <style>
+
   body{
 
     background-image: url("/assets/bookBackground.jpg");
@@ -19,12 +21,14 @@
   height: 50%;
   margin-top: 310px;
   background-color: #F8F8F8;
+  color: black;
 
   }
 
   </style>
 
   <body>
+
     <%= render 'navigationsBar/navigation'%>
     <!-- Starting of flash each do-->
     <div class = "container">

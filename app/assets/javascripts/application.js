@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.raty.js
+//= require jquery.js
+//= require jquery.carousel.js
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
