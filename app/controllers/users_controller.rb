@@ -38,5 +38,15 @@ class UsersController < ApplicationController
 			#redirect_to log_in_url, :notice=>"You must be logged in to view that page."	
 		end
 	end
+
+	def send_message
+		@sender = current_user
+		@receiver = User.find(params[:reviewer])
+	end
+
+	def send_to_reviewer
+		UserMailer.message_to_reviewer(params[:sender], params[:receiver], params[:subject], params[:body]).deliver
+		redirect_to root_path
+	end
  	
  end

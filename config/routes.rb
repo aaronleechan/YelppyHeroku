@@ -13,7 +13,20 @@ Rails.application.routes.draw do
   end
 
 
+  #match '/profile', to: 'users#show_profile',   via: :get
   match '/profile', to: 'users#show_profile',   via: :get
+
+  resources :users do
+    member do
+    end
+
+    collection do
+      get 'profile', to: 'users#show_profile'
+      get 'send_message'
+      post 'send_to_reviewer'
+    end
+  end
+
   match '/about_us', to: 'pages#about_us',      via: :get
   match '/contact_us', to: 'pages#contact_us',  via: :get
   match '/showall', to: 'resturants#showall', via: :get
