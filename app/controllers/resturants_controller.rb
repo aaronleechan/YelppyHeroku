@@ -1,6 +1,6 @@
 class ResturantsController < ApplicationController
 	before_action :authenticate_user!,only:[:create,:new]
-	before_action :is_admin?, only: [:edit, :update, :destroy]
+	before_action :is_admin?, only: [:destroy]
 
 	def index
 		visitor_latitude = request.location.latitude
@@ -84,7 +84,7 @@ class ResturantsController < ApplicationController
 
 	def is_admin?
 		if !current_user.try(:admin?)
-			flash[:danger] = "You are not authorized to edit or delete"
+			flash[:danger] = "You are not authorized to delete"
 			redirect_to root_path
 		end
 	end
