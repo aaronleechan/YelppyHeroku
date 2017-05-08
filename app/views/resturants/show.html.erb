@@ -191,9 +191,11 @@
               <tr>
                 <td>
                   <h5><%="#{review.user.first_name} #{review.user.last_name}" %></h5>
-                  <%- if current_user != review.user %>
+   
+                  <% if current_user != review.user %>
                       <%= link_to 'send message', { controller: 'users', action: 'send_message', reviewer: review.user.id}, class: 'btn btn-primary' %>
                   <% end %>
+
                 </td>
                 <td>
                   <div style = ""class="clearfix star-rating" data-score=<%= review.rating %>></div>
