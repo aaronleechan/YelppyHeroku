@@ -48,7 +48,7 @@
 
         <% if current_user.try(:admin?) %>
         <small><%= link_to "Edit", edit_resturant_path, class: "btn btn-primary btn-mini"%></small>
-        <small><%= link_to "Delete",menu_path, method: :delete, data:
+        <small><%= link_to "Delete",resturant_path, method: :delete, data:
                 {confirm: "Are you sure you want to delete?"}, class: "btn btn-danger btn-mini"%></small>
         <% else %>
         <% end %>
