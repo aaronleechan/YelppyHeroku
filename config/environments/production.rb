@@ -34,18 +34,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
-  config.action_mailer.default_url_options = { :host => 'https://findbest.herokuapp.com/' }
-
-  config.action_mailer.delivery_method = :smtp
-  # SMTP settings for gmail
-  config.action_mailer.smtp_settings = {
-      :address              => 'smtp.gmail.com',
-      :port                 => 587,
-      :user_name            => 'bestfind247@gmail.com',
-      :password             => 'greentea4',
-      :authentication       => 'plain',
-      :enable_starttls_auto => true
-  }
+ 
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
