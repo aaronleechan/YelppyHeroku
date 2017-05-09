@@ -42,7 +42,8 @@
                     </a>
 
                     <% if resturant.reviews.present? %>
-                    <span class="prop-tag star-rating" data-score=<% resturant.reviews.average(:rating).round(2) %>></span>
+                    
+                    <span class="prop-tag star-rating" data-score=<%= resturant.avg_rating %>></span>
                         <% else %>
                     <span class="prop-tag">No review yet!</span>
                     <% end %>
