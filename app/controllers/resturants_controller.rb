@@ -3,10 +3,10 @@ class ResturantsController < ApplicationController
 	before_action :is_admin?, only: [:destroy]
 
 	def index
-		visitor_latitude = request.location.latitude
-		#visitor_latitude = 37.3382082
-		visitor_longitude = request.location.longitude
-		#visitor_longitude =	-121.8863286
+		#visitor_latitude = request.location.latitude
+		visitor_latitude = 37.3382082
+		#visitor_longitude = request.location.longitude
+		visitor_longitude =	-121.8863286
 
 
 		
